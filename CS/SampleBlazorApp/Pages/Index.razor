@@ -102,14 +102,4 @@
     async Task OnCreateNew(ToolbarItemClickEventArgs e) {
         await MyGrid.StartEditNewRowAsync();
     }
-
-    async Task OnEdit(ToolbarItemClickEventArgs e) {
-        if (MyGrid.GetFocusedDataItem() != null)
-            await MyGrid.StartEditDataItemAsync(MyGrid.GetFocusedDataItem());
-    }
-
-    void OnDelete(ToolbarItemClickEventArgs e) {
-        if (MyGrid.GetFocusedDataItem() != null)
-            MyGrid.ShowDataItemDeleteConfirmation(MyGrid.GetFocusedDataItem());
-    }
 }
