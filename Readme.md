@@ -7,15 +7,15 @@
 
 # Blazor Grid — Add CRUD Commands to the DevExpress Data Grid's Integrated Toolbar
 
-This example integrates a [Toolbar](https://docs.devexpress.com/Blazor/DevExpress.Blazor.DxToolbar) into a [DevExpress Blazor Grid](https://docs.devexpress.com/Blazor/DevExpress.Blazor.DxGrid) component and populates the toolbar with CRUD commands.
+Use our Blazor Grid's integrated [Toolbar](https://docs.devexpress.com/Blazor/DevExpress.Blazor.DxToolbar) to address a variety of use case scenarios. In this example, the toolbar includes CRUD commands to edit/modify underlying grid data.
 
 ![Grid and Toolbar](dxgrid-and-toobar.png)
 
 ## Implementation Details
 
-Add a [ToolbarTemplate](https://docs.devexpress.com/Blazor/DevExpress.Blazor.DxGrid.ToolbarTemplate) to the Grid markup to attach a toolbar to your Grid component. This template adds all necessary styles automatically. 
+Add a [ToolbarTemplate](https://docs.devexpress.com/Blazor/DevExpress.Blazor.DxGrid.ToolbarTemplate) to the Grid markup to link a toolbar to your Grid component. This template adds all necessary styles automatically. 
 
-Add a [DxToolbar](https://docs.devexpress.com/Blazor/DevExpress.Blazor.DxToolbar) component to the template and populate it with items. You can use [predefined commands](https://docs.devexpress.com/Blazor/DevExpress.Blazor.DxGrid.ToolbarTemplate?v=26.2#built-in-items) (**Edit**, **Delete**, and **Column Chooser**) or [create custom commands](https://docs.devexpress.com/Blazor/DevExpress.Blazor.DxGrid.ToolbarTemplate?v=26.2#custom-items) (**Add**).
+Add a [DxToolbar](https://docs.devexpress.com/Blazor/DevExpress.Blazor.DxToolbar) component to the template and populate it with items. You can use [predefined commands](https://docs.devexpress.com/Blazor/DevExpress.Blazor.DxGrid.ToolbarTemplate?v=26.2#built-in-items) (**Edit**, **Delete**, and **Column Chooser**) or [create custom commands](https://docs.devexpress.com/Blazor/DevExpress.Blazor.DxGrid.ToolbarTemplate?v=26.2#custom-items) (**Add**) as needed.
 
 Built-in CRUD commands rely on the [focused row](https://docs.devexpress.com/Blazor/404461/components/grid/selection-and-focus#focused-row), so activate the associated Data Grid option.
 
