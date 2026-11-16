@@ -5,9 +5,9 @@
 [![](https://img.shields.io/badge/💬_Leave_Feedback-feecdd?style=flat-square)](#does-this-example-address-your-development-requirementsobjectives)
 <!-- default badges end -->
 
-# Blazor Grid — Add CRUD-Related Buttons Within DevExpress Blazor Toolbar
+# Blazor Grid — Add CRUD Commands to the DevExpress Data Grid's Integrated Toolbar
 
-This example configures CRUD commands within the [Blazor Toolbar](https://docs.devexpress.com/Blazor/DevExpress.Blazor.DxToolbar) displayed at the top edge of our [Blazor Grid](https://docs.devexpress.com/Blazor/DevExpress.Blazor.DxGrid) component.
+This example integrates a [Toolbar](https://docs.devexpress.com/Blazor/DevExpress.Blazor.DxToolbar) into a [DevExpress Blazor Grid](https://docs.devexpress.com/Blazor/DevExpress.Blazor.DxGrid) component and populates the toolbar with CRUD commands.
 
 ![Grid and Toolbar](dxgrid-and-toobar.png)
 
@@ -17,7 +17,7 @@ Add a [ToolbarTemplate](https://docs.devexpress.com/Blazor/DevExpress.Blazor.DxG
 
 Add a [DxToolbar](https://docs.devexpress.com/Blazor/DevExpress.Blazor.DxToolbar) component to the template and populate it with items. You can use [predefined commands](https://docs.devexpress.com/Blazor/DevExpress.Blazor.DxGrid.ToolbarTemplate?v=26.2#built-in-items) (**Edit**, **Delete**, and **Column Chooser**) or [create custom commands](https://docs.devexpress.com/Blazor/DevExpress.Blazor.DxGrid.ToolbarTemplate?v=26.2#custom-items) (**Add**).
 
-Built-in CRUD commands rely on the [focused row](https://docs.devexpress.com/Blazor/404461/components/grid/selection-and-focus#focused-row), so enable it.
+Built-in CRUD commands rely on the [focused row](https://docs.devexpress.com/Blazor/404461/components/grid/selection-and-focus#focused-row), so activate the associated Data Grid option.
 
 ```Razor
 <DxGrid Data="Data"
