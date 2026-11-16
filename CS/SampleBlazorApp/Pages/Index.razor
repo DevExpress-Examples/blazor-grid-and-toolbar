@@ -2,6 +2,7 @@
 
 @using Grid.Northwind
 @using Microsoft.EntityFrameworkCore
+@using DevExpress.Images.Blazor
 @inject IDbContextFactory<NorthwindContext> NorthwindContextFactory
 @implements IDisposable
 
@@ -10,9 +11,9 @@
         EditModelSaving="OnEditModelSaving"
         DataItemDeleting="OnDataItemDeleting"
         KeyFieldName="EmployeeId"
-        EditMode="GridEditMode.PopupEditForm"
-        FocusedRowEnabled=true
-        @ref=MyGrid>
+        EditMode="GridEditMode.EditForm"
+        FocusedRowEnabled="true"
+        @ref="MyGrid">
     <Columns>
         <DxGridDataColumn FieldName="FirstName" />
         <DxGridDataColumn FieldName="LastName" />
@@ -22,20 +23,11 @@
     <ToolbarTemplate>
         <DxToolbar>
             <DxToolbarItem Text="New"
-                           IconCssClass="grid-new-row"
+                           IconUrl="@Icons.Add.PaletteNeutral"
                            Click="OnCreateNew" />
-            <DxToolbarItem Text="Edit"
-                           IconCssClass="grid-edit-row"
-                           Click="OnEdit" />
-            <DxToolbarItem Text="Delete"
-                           IconCssClass="grid-delete-row"
-                           Click="OnDelete" />
-            <DxToolbarItem Text="Column Chooser"
-                           RenderStyle="ButtonRenderStyle.Secondary"
-                           IconCssClass="grid-column-chooser"
-                           CssClass="column-chooser-button"
-                           BeginGroup="true"
-                           Click="OnShowColumnChooser" />
+            <DxGridEditRowToolbarItem />
+            <DxGridDeleteRowToolbarItem />
+            <DxGridColumnChooserToolbarItem BeginGroup="true"/>
         </DxToolbar>
     </ToolbarTemplate>
     <EditFormTemplate Context="editFormContext">
@@ -109,19 +101,5 @@
 
     async Task OnCreateNew(ToolbarItemClickEventArgs e) {
         await MyGrid.StartEditNewRowAsync();
-    }
-
-    async Task OnEdit(ToolbarItemClickEventArgs e) {
-        if (MyGrid.GetFocusedDataItem() != null)
-            await MyGrid.StartEditDataItemAsync(MyGrid.GetFocusedDataItem());
-    }
-
-    void OnDelete(ToolbarItemClickEventArgs e) {
-        if (MyGrid.GetFocusedDataItem() != null)
-            MyGrid.ShowDataItemDeleteConfirmation(MyGrid.GetFocusedDataItem());
-    }
-
-    void OnShowColumnChooser() {
-        MyGrid.ShowColumnChooser(".column-chooser-button");
     }
 }
